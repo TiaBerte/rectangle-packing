@@ -8,7 +8,7 @@ from utility import *
 instance = 1
 rotation = True  # Flag to handle rotation
 
-path = 'C:/Users/Mattia/Desktop/cdmo project/instances/'
+path = '*/instances/'
 ins = 'ins-{}.txt'.format(instance)
 t_max = 300000  # milliseconds
 W, n, dimensions = read_data(path + ins)
@@ -138,9 +138,11 @@ if rotation:
     # Symmetry breaking constraints
     sym1 = [And(x[0] <= 1 + (W - w[0]) / 2, y[0] <= 1 + (H - h[0]) / 2)]
     opt.add(sym1)
+    
     # No rotation for square circuits
     no_rot = [Or(w[i] != h[i], r[i] == 0) for i in range(n)]
     opt.add(no_rot)
+    
     # When two circuits have the same dimensions but swapped, it avoids
     # to rotate both and obtain the same circuits
     sym2 = [Implies(And(dimensions[i][0] == dimensions[j][1], dimensions[i][1] == dimensions[j][0]),
