@@ -4,7 +4,7 @@
 # instances_path has must be a folder containing the instances file
 # in the format described by the pdf project.
 
-instances_path = "C:/Users/Mattia/Desktop/cdmo project/instances/"
+instances_path = "*/instances/"
 txt = [instances_path + "ins-" + str(i)+".txt" for i in range(1, 2)]
 ins_list = ["ins_"+str(i)+".txt" for i in range(1,2)]
 
