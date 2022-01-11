@@ -8,7 +8,7 @@ import random
 
 
 instance = 28
-solution_path = 'C:/Users/Mattia/Desktop/cdmo project/CP/out/out-' \
+solution_path = '*/out/out-' \
                 + str(instance) + '.txt'
 try:
     f = open(solution_path, 'r')
